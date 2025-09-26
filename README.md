@@ -75,14 +75,14 @@ This project continuously monitors the Polygon blockchain for ERC20 token transf
 
 **Requirements**
 
-Rust >= 1.80
-Cargo
-SQLite
-Internet access for Polygon RPC
+    Rust >= 1.80
+    Cargo
+    SQLite
+    Internet access for Polygon RPC
 
 **Install Dependencies**
 
-cargo build --release
+    cargo build --release
 
 **Environment Variables**
 
@@ -96,26 +96,26 @@ Create a .env file:
 
 **raw_transfers**
 
-| Column       | Type    | Description                         |
-| ------------ | ------- | ----------------------------------- |
-| tx_hash      | TEXT    | Transaction hash                    |
-| block_number | INTEGER | Block number                        |
-| from_address | TEXT    | Sender address                      |
-| to_address   | TEXT    | Receiver address                    |
-| value        | TEXT    | Transfer value (as string for U256) |
-| timestamp    | INTEGER | Block timestamp                     |
+    | Column       | Type    | Description                         |
+    | ------------ | ------- | ----------------------------------- |
+    | tx_hash      | TEXT    | Transaction hash                    |
+    | block_number | INTEGER | Block number                        |
+    | from_address | TEXT    | Sender address                      |
+    | to_address   | TEXT    | Receiver address                    |
+    | value        | TEXT    | Transfer value (as string for U256) |
+    | timestamp    | INTEGER | Block timestamp                     |
 
 
 
 **net_flows**
 
-| Column         | Type    | Description                   |
-| -------------- | ------- | ----------------------------- |
-| id             | INTEGER | Primary key (always 1)        |
-| cumulative_in  | TEXT    | Sum of incoming transfers     |
-| cumulative_out | TEXT    | Sum of outgoing transfers     |
-| net_flow       | TEXT    | Difference between in and out |
-| last_updated   | INTEGER | Timestamp of last update      |
+    | Column         | Type    | Description                   |
+    | -------------- | ------- | ----------------------------- |
+    | id             | INTEGER | Primary key (always 1)        |
+    | cumulative_in  | TEXT    | Sum of incoming transfers     |
+    | cumulative_out | TEXT    | Sum of outgoing transfers     |
+    | net_flow       | TEXT    | Difference between in and out |
+    | last_updated   | INTEGER | Timestamp of last update      |
 
 
 
@@ -123,7 +123,7 @@ Create a .env file:
 
 **Start Indexer**
 
-cargo run -- start
+    cargo run -- start
 
 - Fetches blocks continuously
 - Decodes **ERC20** Transfer events
@@ -132,15 +132,15 @@ cargo run -- start
 
 **Query Net Flows**
 
-cargo run -- query
+    cargo run -- query
 
 
 **Output:**
 
-Cumulative In: 1000000000
-Cumulative Out: 500000000
-Net Flow: 500000000
-Last Updated Timestamp: 1758869965
+    Cumulative In: 1000000000
+    Cumulative Out: 500000000
+    Net Flow: 500000000
+    Last Updated Timestamp: 1758869965
 
 
 ### Modules & Code Explanation
