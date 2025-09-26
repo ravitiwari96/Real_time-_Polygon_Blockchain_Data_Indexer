@@ -147,25 +147,25 @@ Create a .env file:
 
 1. **main.rs**
 
-- CLI implemented using structopt (start / query)
-- Initializes DB using **db::init_db**
-- Fetches Polygon blocks using **ethers::Provider**
-- Monitors POL token transfer events
-- Filters Binance addresses and updates net flows
+    - CLI implemented using structopt (start / query)
+    - Initializes DB using **db::init_db**
+    - Fetches Polygon blocks using **ethers::Provider**
+    - Monitors POL token transfer events
+    - Filters Binance addresses and updates net flows
 
 2. **db.rs**
 
-- Handles SQLite operations
-- **init_db:** reads schema.sql and creates tables
-- **insert_raw_transfer:** stores raw transfer events
-- **read_net_flows:** reads current net flow stats
-- **update_net_flows_on_transfer**: updates cumulative in/out/net flows
+    - Handles SQLite operations
+    - **init_db:** reads schema.sql and creates tables
+    - **insert_raw_transfer:** stores raw transfer events
+    - **read_net_flows:** reads current net flow stats
+    - **update_net_flows_on_transfer**: updates cumulative in/out/net flows
 
 3. **get_logs_with_retry**
 
-- Implements retry logic for RPC failures
-- Skips blocks after max retry attempts
-- Handles transient network issues
+    - Implements retry logic for RPC failures
+    - Skips blocks after max retry attempts
+    - Handles transient network issues
 
 
 ### Error & Exception Handling
