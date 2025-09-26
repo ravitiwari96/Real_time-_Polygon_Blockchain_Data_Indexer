@@ -34,29 +34,29 @@ This project continuously monitors the Polygon blockchain for ERC20 token transf
 
 ### Architecture
 
-+--------------------+
-|  Polygon Blockchain|
-+--------------------+
-          |
-          v
-  +------------------+
-  |   RPC Provider   |
-  +------------------+
-          |
-          v
-+---------------------------+
-|  Rust Indexer (CLI)       |
-|---------------------------|
-| - Fetch blocks            |
-| - Decode Transfer events  |
-| - Filter Binance addresses|
-| - Update net flows        |
-+---------------------------+
-          |
-          v
-  +------------------+
-  |  SQLite Database |
-  +------------------+
+    +--------------------+
+    |  Polygon Blockchain|
+    +--------------------+
+              |
+              v
+      +------------------+
+      |   RPC Provider   |
+      +------------------+
+              |
+              v
+    +---------------------------+
+    |  Rust Indexer (CLI)       |
+    |---------------------------|
+    | - Fetch blocks            |
+    | - Decode Transfer events  |
+    | - Filter Binance addresses|
+    | - Update net flows        |
+    +---------------------------+
+              |
+              v
+      +------------------+
+      |  SQLite Database |
+      +------------------+
 
 
 
